@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'persons'], function () {
+    Route::get('/', 'PersonsController@index');
 });
