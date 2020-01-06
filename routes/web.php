@@ -13,4 +13,6 @@
 
 Route::group(['prefix' => 'persons'], function () {
     Route::get('/', 'PersonsController@index');
+    Route::get('/new', "PersonsController@newView");
+    Route::post('/store', 'PersonsController@store');
 });

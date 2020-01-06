@@ -16,7 +16,7 @@ class Person extends Model
     protected $table = 'persons';
 
     // Returns all the phones 
-    public function phone()
+    public function phones()
     {
         return $this->hasMany(Phone::class, 'id_person');
     }

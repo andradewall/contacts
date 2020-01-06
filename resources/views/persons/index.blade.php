@@ -3,12 +3,14 @@
 @section('content')
     <div class="persons-panel">
         @foreach ($persons as $p)
-            <div class="col-md-4 panel panel-default">
-               <div class="panel-heading">
-                    <h3 class="panel-title">Panel title</h3>
-                </div>
-                <div class="panel-body">
-                    Panel content
+            <div class="col-md-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">{{$p->name}}</div>
+                    <div class="panel-body">
+                        @foreach ($p->phones as $phone)
+                            <p><strong>Phone: </strong>({{$phone->ddd}}) {{$phone->number}}</p>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         @endforeach
