@@ -31,11 +31,21 @@
                 <a class="navbar-brand" href="#">Contacts</a>
               </div>
 
+            <form action="{{url('/persons/search')}}" method="POST" class="navbar-form navbar-left" role="search">
+                {{ csrf_field() }}
+                <div class="input-group">
+                    <input name="search" type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+            </form>
+
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                         <li><a href="{{url('persons/new')}}">New</a></li>
                             <li><a href="{{url('persons')}}">List</a></li>

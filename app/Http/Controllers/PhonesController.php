@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PhonesController extends Controller
 {
-    public function store(Phone $phone)
+    public function save(Phone $phone)
     {  
         // Try to store the Phone's obj
         try {

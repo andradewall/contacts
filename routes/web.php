@@ -12,7 +12,15 @@
 */
 
 Route::group(['prefix' => 'persons'], function () {
-    Route::get('/', 'PersonsController@index');
+    Route::get('/', function () {
+        return redirect('persons/A');
+    });
     Route::get('/new', "PersonsController@newView");
-    Route::post('/store', 'PersonsController@store');
+    Route::post('/save', 'PersonsController@save');
+    Route::get('/{id}/edit', 'PersonsController@editView');
+    Route::get('/{id}/remove', 'PersonsController@removeView');
+    Route::get('/{id}/delete', 'PersonsController@delete');
+    Route::post('/edit', 'PersonsController@edit');
+    Route::post('/search', 'PersonsController@search');
+    Route::get('/{letter}', 'PersonsController@index');
 });

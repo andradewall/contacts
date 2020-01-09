@@ -20,4 +20,14 @@ class Person extends Model
     {
         return $this->hasMany(Phone::class, 'id_person');
     }
+
+    public static function indexLetter($letter)
+    {
+        return static::where('name', 'LIKE', $letter.'%')->get();
+    }
+
+    public static function search($flag)
+    {
+        return static::where('name', 'LIKE', '%'.$flag.'%')->get();
+    }
 }
